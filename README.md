@@ -10,5 +10,5 @@ Note: You should have node.js installed before starting
 4. node index.js
 Good luck!
 
-# Note: Drawchat houses the sentiment analysis + comments platform for E-Insights
+Note: Drawchat houses the sentiment analysis + comments platform for E-Insights
 Informational Website: www.e-insights.ml
