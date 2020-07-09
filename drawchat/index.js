@@ -66,10 +66,13 @@ io.on('connection', (socket) => {
 	console.log('average score so far: ' + avgScore);
 	console.log('moving average is: ' + movingAvg);
 	
-	socket.emit('new message',{
-	    username:socket.username,
+	socket.broadcast.emit('new message',{
+
+	username:socket.username,
 	    message:data,
-	    value: movingAvg
+		value: movingAvg,
+		secondvalue: avgScore,
+		thirdvalue: result.score
 	});
 	
 
@@ -120,19 +123,6 @@ io.on('connection', (socket) => {
 });
 
 
-	
-/*  console.log('a user connected');
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-  });
-}); 
-
-io.on('connection', (socket) => {
-  socket.on('chat message', (msg) => {
-    io.emit('chat message', msg);
-  });
-});
-*/
 
 http.listen(port, () => {
     console.log('Server listening at port %d', port);
